@@ -14,19 +14,21 @@ public class Topics {
         // System.out.println(pattern.matcher("abcd").matches());
 
         // Maps in Java.
-        Map<String, String> Treasure = new HashMap<>();
+        Map<String, String> ID = new HashMap<>();
 
-        Treasure.put("Hidden", "Lagoon");
-        Treasure.put("Jolly", "Rodger");
-        Treasure.put("X", "Marks the spot.");
+        ID.put("Name", "Jane Doe");
+        ID.put("City", "Chicago");
+        ID.put("Age", "22");
 
-        System.out.println(Treasure.get("X"));
+        System.out.println(ID.get("Name"));
+
+        // No duplicates alllowed!
 
         // Meet my friend JSON (JavaScript Object Notation).
-        JSONObject ID = new JSONObject(
-            "{\"city\":\"chicago\",\"name\":\"jane doe\",\"age\":\"22\"}"
+        JSONObject ID2 = new JSONObject(
+            "{\"name\":\"john doe\",\"city\":\"chicago\",\"age\":\"22\"}"
         );
 
-        System.out.println(ID.get("name"));
+        System.out.println(ID2.get("name"));
     }
 }
