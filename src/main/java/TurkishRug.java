@@ -18,7 +18,7 @@ public class TurkishRug {
         return new String[0][0];
     }
 
-    // Creates a vertically striped 2D String array.
+    // Creates a vertical striped 2D String array.
     public static String[][] vertical() {
         // TODO implement vertical()
         return new String[0][0];
