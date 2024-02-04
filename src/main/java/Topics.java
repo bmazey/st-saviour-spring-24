@@ -8,7 +8,7 @@ public class Topics {
     public static void main(String[] args) {
 
         // Create a regular expression.
-        // Pattern pattern = Pattern.compile("abc.");
+        Pattern pattern = Pattern.compile("abc.");
 
         // Check to see if given text is matched by the regex pattern.
         // System.out.println(pattern.matcher("abcd").matches());
@@ -27,7 +27,7 @@ public class Topics {
         ID.put("City", "Detroit");
         // System.out.println(ID.get("City"));
 
-        // No duplicates allowed!
+        // No duplicate keys allowed!
 
         // Meet my friend JSON (JavaScript Object Notation).
         JSONObject ID2 = new JSONObject(
@@ -38,16 +38,17 @@ public class Topics {
 
         // Fibonacci examples.
         // System.out.println(fibonacci(48));
-        // System.out.println(dynamicFibonacci(48));
+        System.out.println(dynamicFibonacci(48));
     }
 
     // Recursive fibonacci.
+    // Return the Nth number of the sequence.
     public static int fibonacci(int n) {
         // Establish a base case.
         if (n <= 1) {
             return n;
         }
-        return fibonacci(n - 1) + fibonacci(n -2);
+        return fibonacci(n - 1) + fibonacci(n - 2);
     }
 
     // Dynamic fibonacci.
@@ -62,7 +63,7 @@ public class Topics {
         dynamic[1] = 1;
 
         for(int i = 2; i < dynamic.length; i++) {
-            dynamic[i] = dynamic[i - 1] + dynamic[i -2];
+            dynamic[i] = dynamic[i - 1] + dynamic[i - 2];
         }
 
         return dynamic[n - 1];
