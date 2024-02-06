@@ -9,6 +9,11 @@ public class TurkishRug {
     // Creates a solid 2D String array.
     public static String[][] solid() {
         // TODO implement solid()
+        String[][] solidRug = new String [11][11];
+            for(int row = 0; row < board.length; row++){
+                for()
+            }
+
         return new String[0][0];
     }
     
