@@ -8,7 +8,12 @@ public class TurkishRug {
 
     // Creates a solid 2D String array.
     public static String[][] solid() {
-        // TODO implement solid()
+        String[][] solidRug = new String[11][11];
+        for (int i = 0; i < solidRug.length; i++){
+            for (int j = 0; j < solidRug[i].length; j++){
+                System.out.print(solidRug[i][j]);
+            }
+        }
         return new String[0][0];
     }
     
