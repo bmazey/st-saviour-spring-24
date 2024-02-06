@@ -7,5 +7,6 @@ public class Loom {
     // Prints a 2D String array.
     public static void weave(String[][] rug) {
         // TODO implement weave()
+        int test [][] = new int ();
     }
 }
