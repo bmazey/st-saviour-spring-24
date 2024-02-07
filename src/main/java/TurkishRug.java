@@ -9,7 +9,14 @@ public class TurkishRug {
     // Creates a solid 2D String array.
     public static String[][] solid() {
         // TODO implement solid()
-        return new String[0][0];
+        String emoji = new String(Character.toChars(0x1F349));
+
+        String[][] solid = new String[11][11];
+        for ( int i = 0; i < rug.length; i++) {
+            for (int j = 0; j < rug [i].length; j++)
+        solid [i][j] = emoji
+
+        return solid;
     }
     
     // Creates a horizontal striped 2D String array. 
@@ -41,4 +48,5 @@ public class TurkishRug {
         // TODO implement argyle()
         return new String[0][0];
     }
+
 }
