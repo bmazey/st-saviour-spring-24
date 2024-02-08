@@ -95,8 +95,8 @@ public class TurkishRug {
     }
 
     // BONUS: Creates an argyle 2D String array.
-    public static String[][] argyle() {
+    //public static String[][] argyle() {
 
-        return new String[][]; 
+       // return new String[][]; 
     }
-}
+//}
