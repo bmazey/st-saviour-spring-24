@@ -56,14 +56,14 @@ public class TurkishRug {
     public static String[][] diagonal() {
         // TODO implement diagonal()
         String [][] diagonal = new String [11][11];
-        String dragon = new String (Character.toChars(0x1F432));
-        String rabbit = new String (Character.toChars(0x1F430));
+        String sun = new String (Character.toChars(0x1F31E));
+        String moon = new String (Character.toChars(0x1F31D));
         for (int i = 0; i < diagonal.length; i ++){
             for (int j = 0; j < diagonal.length; j++){
-                if (i = 0){ // work on this 
-                    diagonal[i][j] = dragon; 
+                if (i % diagonal.length == 0 && j % diagonal.length == 0){ // work on this 
+                    diagonal[i][j] = sun; 
                 }else{
-                    diagonal[i][j] = rabbit;
+                    diagonal[i][j] = moon;
                 }
             }
         }
@@ -72,8 +72,19 @@ public class TurkishRug {
 
     // Creates a plaid 2D String array.
     public static String[][] plaid() {
-        // TODO implement plaid()
-        return new String[0][0];
+        String [][] plaid = new String [11][11];
+        String dragon = new String (Character.toChars(0x1F432));
+        String rabbit = new String (Character.toChars(0x1F430));
+        for (int i = 0; i < plaid.length; i ++){
+            for (int j = 0; j < plaid.length; j++){
+                if (i % 2 == 0 && j % 2 == 0){ // work on this 
+                    plaid[i][j] = dragon; 
+                }else{
+                    plaid[i][j] = rabbit;
+                }
+            }
+        }
+        return plaid; 
     }
 
     // BONUS: Creates an argyle 2D String array.

@@ -6,6 +6,7 @@ public class Loom {
       //  weave(TurkishRug.horizontal());
       //  weave(TurkishRug.vertical());
         weave(TurkishRug.diagonal());
+      //  weave(TurkishRug.plaid());
     }
 
     // Prints a 2D String array.
