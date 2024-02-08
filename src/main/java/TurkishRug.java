@@ -24,6 +24,11 @@ public class TurkishRug {
     // Creates a horizontal striped 2D String array. 
     public static String[][] horizontal() {
         // TODO implement horizontal()
+        String[][] horizontal = new String [11][11];
+        for ( int i = 0; i < solid.length; i++) {
+            //if staement for the conditon by modding by 2
+            for (int j = 0; j < solid [i].length; j++) {
+
         return new String[0][0];
     }
 
