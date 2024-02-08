@@ -45,25 +45,58 @@ public class TurkishRug {
 
     // Creates a vertical striped 2D String array.
     public static String[][] vertical() {
-        // TODO implement vertical()
-        return new String[0][0];
+        String sunemoji = new String(Character.toChars(0x1F31E));
+        String moonemoji = new String(Character.toChars(0x1F31A));
+        String[][] verticalRug = new String [11][11];
+        for (int i = 0; i< verticalRug.length; i++){
+            for (int j = 0; j< verticalRug[i].length; j++){
+                if (j%2 == 0){
+                    verticalRug[i][j] = sunemoji;
+                } else {
+                    verticalRug[i][j] = moonemoji;
+                }
+            }
+        }
+        return verticalRug;
     }
 
     // Creates a diagonally striped 2D String array.
     public static String[][] diagonal() {
-        // TODO implement diagonal()
-        return new String[0][0];
+        String sunemoji = new String(Character.toChars(0x1F31E));
+        String moonemoji = new String(Character.toChars(0x1F31A));
+        String[][] diagonalRug = new String [11][11];
+        for (int i = 0; i< diagonalRug.length; i++){
+            for (int j = 0; j< diagonalRug[i].length; j++){
+                if (i%2 == 0 ^ j%2 == 0){
+                    diagonalRug[i][j] = sunemoji;
+                } else {
+                    diagonalRug[i][j] = moonemoji;
+                }
+            }
+        }
+        return diagonalRug;
     }
 
     // Creates a plaid 2D String array.
     public static String[][] plaid() {
-        // TODO implement plaid()
-        return new String[0][0];
+        String sunemoji = new String(Character.toChars(0x1F31E));
+        String moonemoji = new String(Character.toChars(0x1F31A));
+        String[][] plaidRug = new String [11][11];
+        for (int i = 0; i< plaidRug.length; i++){
+            for (int j = 0; j< plaidRug[i].length; j++){
+                if (i%2 == 0 && j%2 == 0){
+                    plaidRug[i][j] = sunemoji;
+                } else {
+                    plaidRug[i][j] = moonemoji;
+                }
+            }
+        }
+        return plaidRug;
     }
 
     // BONUS: Creates an argyle 2D String array.
     public static String[][] argyle() {
-        // TODO implement argyle()
-        return new String[0][0];
+
+        return new String[][]; 
     }
 }
