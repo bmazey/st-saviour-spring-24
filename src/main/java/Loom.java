@@ -1,6 +1,7 @@
 public class Loom {
     public static void main(String[] args) {
         // TODO use this space to print rugs to the console.
+        weave(TurkishRug.solid());
         
     }
 

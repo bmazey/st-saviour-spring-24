@@ -12,9 +12,11 @@ public class TurkishRug {
         String emoji = new String(Character.toChars(0x1F349));
 
         String[][] solid = new String[11][11];
-        for ( int i = 0; i < rug.length; i++) {
-            for (int j = 0; j < rug [i].length; j++)
-        solid [i][j] = emoji
+        for ( int i = 0; i < solid.length; i++) {
+            for (int j = 0; j < solid [i].length; j++) {
+                solid [i][j] = emoji;
+            }
+        }
 
         return solid;
     }
