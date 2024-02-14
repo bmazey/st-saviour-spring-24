@@ -60,9 +60,11 @@ public class TurkishRug {
         String moon = new String (Character.toChars(0x1F31D));
         for (int i = 0; i < diagonal.length; i ++){
             for (int j = 0; j < diagonal.length; j++){
-                if (i % diagonal.length == 0 && j % diagonal.length == 0){ // work on this 
-                    diagonal[i][j] = sun; 
-                }else{
+                diagonal[i][j] = sun;
+                if (i % 2 == 0 && j % 2 == 0){ // work on this 
+                    diagonal[i][j] = moon; 
+                }
+                if (i % 2 != 0 && j % 2 != 0){
                     diagonal[i][j] = moon;
                 }
             }
