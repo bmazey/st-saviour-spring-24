@@ -22,7 +22,7 @@ public class TurkishRug {
     // Creates a horizontal striped 2D String array. 
     public static String[][] horizontal() {
         String[][] horizontal = new String[11][11];
-        for (intm  )
+        for (int i = 0; i  )
         
 
         return new String[0][0];
