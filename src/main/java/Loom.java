@@ -2,11 +2,17 @@ public class Loom {
 
     public static void main(String[] args) {
         // TODO use this space to print rugs to the console.
-      //  weave(TurkishRug.solid());
-      //  weave(TurkishRug.horizontal());
-      //  weave(TurkishRug.vertical());
-        weave(TurkishRug.diagonal());
-      //  weave(TurkishRug.plaid());
+        // weave(TurkishRug.solid());
+        // System.out.println("");
+        // weave(TurkishRug.horizontal());
+        // System.out.println("");
+        // weave(TurkishRug.vertical());
+        // System.out.println("");
+        // weave(TurkishRug.diagonal());
+        // System.out.println("");
+        // weave(TurkishRug.plaid());
+        // System.out.println("");
+        weave(TurkishRug.argyle());
     }
 
     // Prints a 2D String array.

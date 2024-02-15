@@ -79,7 +79,7 @@ public class TurkishRug {
         String rabbit = new String (Character.toChars(0x1F430));
         for (int i = 0; i < plaid.length; i ++){
             for (int j = 0; j < plaid.length; j++){
-                if (i % 2 == 0 && j % 2 == 0){ // work on this 
+                if (i % 2 == 0 && j % 2 == 0){ 
                     plaid[i][j] = dragon; 
                 }else{
                     plaid[i][j] = rabbit;
@@ -91,7 +91,35 @@ public class TurkishRug {
 
     // BONUS: Creates an argyle 2D String array.
     public static String[][] argyle() {
-        // TODO implement argyle()
-        return new String[0][0];
+        String [][] argyle = new String[11][11];
+        String balloon = new String (Character.toChars (0x1F388));
+        String hand = new String (Character.toChars(0x270B));
+        for (int i = 0; i < argyle.length; i ++){
+            for (int j = 0; j < argyle.length; j ++){
+                argyle [i][j] = hand;
+                // if (i % 5 == 0 && j % 5 == 0){
+                //     argyle [i][j] = balloon;
+                // }
+                if (i == j){
+                    argyle[i][j] = balloon;
+                }
+                if (j == 11 - 1 - i){
+                    argyle [i][j] = balloon;
+                }
+                if (j == 11/2 + i){
+                    argyle[i][j] = balloon;
+                }
+                if (j == 11/2 - i){
+                    argyle[i][j] = balloon;
+                }
+                if (i == 11/2 + j){
+                    argyle [i][j] = balloon;
+                }
+                if (i == 11/2 - i){
+                    argyle [i][j] = balloon;
+                }
+            }
+        }
+        return argyle;
     }
 }
