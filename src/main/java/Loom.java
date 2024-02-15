@@ -3,8 +3,10 @@ public class Loom {
         // TODO use this space to print rugs to the console.
         weave(TurkishRug.solid());
         weave(TurkishRug.horizontal());
-        
+        weave(TurkishRug.vertical());
+        weave(TurkishRug.plaid());
     }
+        
 
     // Prints a 2D String array.
     public static void weave(String[][] rug) {

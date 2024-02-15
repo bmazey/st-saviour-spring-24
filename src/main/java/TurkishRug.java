@@ -40,34 +40,48 @@ public class TurkishRug {
         return horizontal;
     }
 
-        String [][] vertical = new String [11][11];
-            for ( int i = 0; i < vertical.length; i++) {
-                for (int j = 0; j < vertical [i].length; j++) {
-                    if (j % 2 == 0) {
-                        vertical [i][j] = emoji1;
-               }    else {
-                        vertical [i][j] = emoji2;
-       }
-            }
-
-
-
     // Creates a vertical striped 2D String array.
     public static String[][] vertical() {
+        String emoji3 = new String(Character.toChars(0x1F353));
+        String emoji4 = new String(Character.toChars(0x1F361));
+
         // TODO implement vertical()
-        return new String[0][0];
+        String [][] vertical = new String [11][11];
+        for ( int i = 0; i < vertical.length; i++) {
+            for (int j = 0; j < vertical [i].length; j++) {
+                if (j % 2 == 0) {
+                    vertical [i][j] = emoji3;
+                } else {
+                    vertical [i][j] = emoji4;
+                }
+            }
+        }
+        return vertical;
     }
 
     // Creates a diagonally striped 2D String array.
     public static String[][] diagonal() {
-        // TODO implement diagonal()
         return new String[0][0];
+        
     }
 
     // Creates a plaid 2D String array.
     public static String[][] plaid() {
-        // TODO implement plaid()
-        return new String[0][0];
+        
+        String emoji7 = new String(Character.toChars(0x1F353));
+        String emoji8 = new String(Character.toChars(0x1F361));
+        
+        String [][] plaid = new String [11][11];
+        for ( int i = 0; i < plaid.length; i++) {
+            for (int j = 0; j < plaid [i].length; j++) {
+                if (j % 2 == 1 || i % 2 == 1) {
+                    plaid[i][j] = emoji7;
+                } else {
+                    plaid[i][j] = emoji8;
+                }
+            } 
+        }
+        return plaid;
     }
 
     // BONUS: Creates an argyle 2D String array.
