@@ -15,48 +15,71 @@ public class TurkishRug {
 
     // Creates a solid 2D String array.
     public static String[][] solid() {
-        
+        // assigns an emoji to the variable sunemoji
         String sunemoji = new String(Character.toChars(0x1F31E));
+        // sets up an array with a length and width of 11
         String[][] solidRug = new String[11][11];
+        // iterates through the i values, or each row of the rug
         for (int i = 0; i < solidRug.length; i++){
+            // iterates through the j values, or each element in each row of the rug
             for (int j = 0; j < solidRug[i].length; j++){
+                // assigns the sun emoji at each position
                 solidRug[i][j] = sunemoji;
             }
         }
+        // returns the completed rug
         return solidRug;
     }
     
     // Creates a horizontal striped 2D String array. 
     public static String[][] horizontal() {
+        // assigns emojis to the variables sunemoji and moonemoji
         String sunemoji = new String(Character.toChars(0x1F31E));
         String moonemoji = new String(Character.toChars(0x1F31A));
+        // sets up an array with a length and width of 11
         String[][] horizontalRug = new String [11][11];
+        // iterates through the i values, or each row of the rug
         for (int i = 0; i< horizontalRug.length; i++){
+            // iterates through the j values, or each element in each row of the rug
             for (int j = 0; j< horizontalRug[i].length; j++){
+                // if the value of i is even, so every other row, the j values in that 
+                // row are the sun emoji
                 if (i%2 == 0){
                     horizontalRug[i][j] = sunemoji;
+                // if the value of i is odd, so every other row, the j values in that 
+                // row are the moon emoji
                 } else {
                     horizontalRug[i][j] = moonemoji;
                 }
             }
         }
+        // returns the completed rug
         return horizontalRug;
     }
 
     // Creates a vertical striped 2D String array.
     public static String[][] vertical() {
+        // assigns emojis to the variables sunemoji and moonemoji
         String sunemoji = new String(Character.toChars(0x1F31E));
         String moonemoji = new String(Character.toChars(0x1F31A));
+        // sets up an array with a length and width of 11
         String[][] verticalRug = new String [11][11];
+        // iterates through the i values, or each row of the rug
         for (int i = 0; i< verticalRug.length; i++){
+            // iterates through the j values, or each element in each row of the rug
             for (int j = 0; j< verticalRug[i].length; j++){
+                // if the value of j is even, so every other column, the elements in that 
+                // row are the sun emoji
                 if (j%2 == 0){
                     verticalRug[i][j] = sunemoji;
+                // if the value of j is odd, so every other column, the elements in that 
+                // row are the moon emoji
                 } else {
                     verticalRug[i][j] = moonemoji;
                 }
             }
         }
+        // returns the completed rug
         return verticalRug;
     }
 
@@ -95,8 +118,37 @@ public class TurkishRug {
     }
 
     // BONUS: Creates an argyle 2D String array.
-    //public static String[][] argyle() {
+    public static String[][] argyle() {
+        // assigns emojis to the variables sunemoji and moonemoji
+        String sunemoji = new String(Character.toChars(0x1F31E));
+        String moonemoji = new String(Character.toChars(0x1F31A));
+        // sets up an array with a length and width of 11
+        String[][] argyleRug = new String [11][11];
+        // iterates through the i values, or each row of the rug
+        for (int i = 0; i< argyleRug.length; i++){
+            // iterates through the j values, or each element in each row of the rug
+            for (int j = 0; j< argyleRug[i].length; j++){
+                // if the value of i is even, so every other row, the j values in that 
+                // row are the sun emoji
+                if (i + j == 10){
+                    argyleRug[i][j] = sunemoji;
+                // if the value of i is odd, so every other row, the j values in that 
+                // row are the moon emoji
+                } else if ( i == j){
+                    argyleRug[i][j] = sunemoji;
+                } else {
+                    argyleRug[i][j] = moonemoji;
+                }
+            }
+        }
+        for (int k = 0; k < argyleRug.length / 2 + 1; k++){
+            // iterates through the j values, or each element in each row of the rug
+            argyleRug[k][argyleRug.length / 2 - k] = sunemoji;
+            argyleRug[k][argyleRug.length / 2 + k] = sunemoji;
 
-       // return new String[][]; 
+            argyleRug[(argyleRug.length - 1) - k][argyleRug.length / 2 - k] = sunemoji;
+            argyleRug[(argyleRug.length - 1) - k][argyleRug.length / 2 + k] = sunemoji;
+        } 
+        return argyleRug;
     }
-//}
+}

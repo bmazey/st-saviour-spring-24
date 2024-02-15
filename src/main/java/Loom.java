@@ -6,6 +6,7 @@ public class Loom {
         weave(TurkishRug.vertical());
         weave(TurkishRug.diagonal());
         weave(TurkishRug.plaid());
+        weave(TurkishRug.argyle());
     }
     // Prints a 2D String array.
     public static void weave(String[][] rug) {
