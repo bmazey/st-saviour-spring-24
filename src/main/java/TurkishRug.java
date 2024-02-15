@@ -8,11 +8,11 @@ public class TurkishRug {
 
     // Creates a solid 2D String array.
     public static String[][] solid() {
-        String whiteFlowerEmoji = new String(Character.toChars(0x1F4AE));
+        String appleEmoji = new String(Character.toChars(0x1F34F));
         String[][] solidRug = new String[11][11];
         for (int i = 0; i < solidRug.length; i++){
             for (int j = 0; j < solidRug[i].length; j++){
-                solidRug[i][j] = whiteFlowerEmoji;
+                solidRug[i][j] = appleEmoji;
             }
         }
         return solidRug;
@@ -20,14 +20,15 @@ public class TurkishRug {
     
     // Creates a horizontal striped 2D String array. 
     public static String[][] horizontal() {
-        // TODO implement horizontal()
-        String whiteFlowerEmoji = new String(Character.toChars(0x1F4AE));
+        String appleEmoji = new String(Character.toChars(0x1F34F));
         String swirlEmoji = new String(Character.toChars(0x1F365));
         String[][] horizontalRug = new String[11][11];
         for (int i = 0; i < horizontalRug.length; i++){
             for (int j = 0; j < horizontalRug[i].length; j++){
-                horizontalRug[i][j] = whiteFlowerEmoji;
-                if (i % 2 == 0); 
+                if (i % 2 == 0) {
+                    horizontalRug[i][j] = appleEmoji;
+                } else {
+                    horizontalRug[i][j] = swirlEmoji;
                 }
             }
         }
@@ -36,25 +37,78 @@ public class TurkishRug {
 
     // Creates a vertical striped 2D String array.
     public static String[][] vertical() {
-        // TODO implement vertical()
-        return new String[0][0];
+        String appleEmoji = new String(Character.toChars(0x1F34F));
+        String swirlEmoji = new String(Character.toChars(0x1F365));
+        String[][] verticalRug = new String[11][11];
+        for (int i = 0; i < verticalRug.length; i++){
+            for (int j = 0; j < verticalRug[i].length; j++){
+                if (j % 2 == 0) {
+                    verticalRug[i][j] = appleEmoji;
+                } else {
+                    verticalRug[i][j] = swirlEmoji;
+                }
+            }
+        }
+        return verticalRug;
     }
 
     // Creates a diagonally striped 2D String array.
     public static String[][] diagonal() {
-        // TODO implement diagonal()
-        return new String[0][0];
+        String appleEmoji = new String(Character.toChars(0x1F34F));
+        String swirlEmoji = new String(Character.toChars(0x1F365));
+        String[][] diagonalRug = new String[11][11];
+        for (int i = 0; i < diagonalRug.length; i++) {
+            for (int j = 0; j < diagonalRug[i].length; j++) {
+                diagonalRug[i][j] = swirlEmoji;
+                if (i % 2 == 0 && j % 2 == 0) {
+                    diagonalRug[i][j] = appleEmoji;
+                }
+                if (i % 2 != 0 && j % 2 != 0) {
+                    diagonalRug[i][j] = appleEmoji;
+                }
+            }
+        }
+        return diagonalRug;
     }
 
     // Creates a plaid 2D String array.
     public static String[][] plaid() {
-        // TODO implement plaid()
-        return new String[0][0];
+        String appleEmoji = new String(Character.toChars(0x1F34F));
+        String swirlEmoji = new String(Character.toChars(0x1F365));
+        String[][] plaidRug = new String[11][11];
+        for (int i = 0; i < plaidRug.length; i++) {
+            for (int j = 0; j < plaidRug[i].length; j++) {
+                plaidRug[i][j] = swirlEmoji;
+                if (i % 2 == 0 && j % 2 == 0) {
+                    plaidRug[i][j] = appleEmoji;
+                }
+            }
+        }
+        return plaidRug;
     }
 
     // BONUS: Creates an argyle 2D String array.
     public static String[][] argyle() {
-        // TODO implement argyle()
-        return new String[0][0];
+        String appleEmoji = new String(Character.toChars(0x1F34F));
+        String swirlEmoji = new String(Character.toChars(0x1F365));
+        String[][] argyleRug = new String[11][11];
+        for (int i = 0; i < argyleRug.length; i++) {
+            for (int j = 0; j < argyleRug[i].length; j++) {
+                argyleRug[i][j] = swirlEmoji;
+                if (i == j) {
+                    argyleRug[i][j] = appleEmoji;
+                } 
+                if (i + j == 10) {
+                    argyleRug[i][j] = appleEmoji;
+                } 
+                if (i + j == 5) {
+                    argyleRug[i][j] = appleEmoji;
+                }
+                if (j - i == 5) {
+                    argyleRug[i][j] = appleEmoji;
+                }
+            }
+        }
+        return argyleRug;
     }
 }
