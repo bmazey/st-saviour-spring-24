@@ -100,7 +100,28 @@ public class TurkishRug {
     // BONUS: Creates an argyle 2D String array.
     public static String[][] argyle() {
         // TODO implement argyle()
-        return new String[0][0];
-    }
+        String dolphinemoji = new String(Character.toChars(0x1F42C));
+        String tigeremoji = new String(Character.toChars(0x1F42F));
+        String[][] argyleRug = new String[11][11];
+        for (int i = 0; i < argyleRug.length; i++) {
+            for (int j = 0; j < argyleRug[i].length; j++) {
+                argyleRug[i][j] = tigeremoji;
+                if ( i == j) {
+                    argyleRug[i][j] = dolphinemoji;
+                }
+                if (i + j == 10) {
+                    argyleRug [i][j] = tigeremoji;
+                }
+            }
+        }
+        for (int i = 0; i < argyleRug.length/2 + 1; i++){
+            argyleRug[i][argyleRug.length / 2 + i] = dolphinemoji;
+            argyleRug[i][argyleRug.length / 2 - i] = dolphinemoji;
 
+            argyleRug[argyleRug.length - 1 - i][argyleRug.length / 2 + i] = dolphinemoji;
+            argyleRug[argyleRug.length -1 - i][argyleRug.length / 2 - 1] = dolphinemoji;
+        }
+        return argyleRug;
+    }
+        
 }
