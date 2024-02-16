@@ -1,5 +1,6 @@
 public class Loom {
 
+    //weaves all completed rugs
     public static void main(String[] args) {
         weave(TurkishRug.solid());
         weave(TurkishRug.horizontal());
