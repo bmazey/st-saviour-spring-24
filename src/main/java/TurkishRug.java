@@ -94,18 +94,20 @@ public class TurkishRug {
         String[][] argyleRug = new String[11][11];
         for (int i = 0; i < argyleRug.length; i++) {
             for (int j = 0; j < argyleRug[i].length; j++) {
-                argyleRug[i][j] = swirlEmoji;
                 if (i == j) {
                     argyleRug[i][j] = appleEmoji;
-                } 
-                if (i + j == 10) {
+                } else if (i + j == 10) {
                     argyleRug[i][j] = appleEmoji;
-                } 
-                if (i + j == 5) {
+                } else if (i + j == 5) {
                     argyleRug[i][j] = appleEmoji;
-                }
-                if (j - i == 5) {
+                } else if (j - i == 5) {
                     argyleRug[i][j] = appleEmoji;
+                } else if (i - j == 5) {
+                    argyleRug[i][j] = appleEmoji;
+                } else if (i + j == 15) {
+                    argyleRug[i][j] = appleEmoji;
+                } else {
+                    argyleRug[i][j] = swirlEmoji;
                 }
             }
         }
