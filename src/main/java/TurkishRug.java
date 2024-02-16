@@ -8,12 +8,12 @@ public class TurkishRug {
 
     // Creates a solid 2D String array.
     public static String[][] solid() {
-        // TODO implement solid()
+        // establish solid as a string array
         String emoji = new String(Character.toChars(0x1F349));
-
         String[][] solid = new String[11][11];
         for ( int i = 0; i < solid.length; i++) {
             for (int j = 0; j < solid [i].length; j++) {
+        // established the parameters for i and j increasing
                 solid [i][j] = emoji;
             }
         }
@@ -26,7 +26,7 @@ public class TurkishRug {
         String emoji1 = new String(Character.toChars(0x1F338));
         String emoji2 = new String(Character.toChars(0x1F339));
 
-        // TODO implement horizontal()
+         // establish horizontal as a string array with the parameters 11x11
         String[][] horizontal = new String [11][11];
         for ( int i = 0; i < horizontal.length; i++) {
             for (int j = 0; j < horizontal[i].length; j++) {
@@ -111,7 +111,7 @@ public class TurkishRug {
                     argyleRug[i][j] = dolphinemoji;
                 }
                 if (i + j == 10) {
-                    argyleRug [i][j] = tigeremoji;
+                    argyleRug[i][j] = dolphinemoji;
                 }
             }
         }
@@ -120,7 +120,7 @@ public class TurkishRug {
             argyleRug[i][argyleRug.length / 2 - i] = dolphinemoji;
 
             argyleRug[argyleRug.length - 1 - i][argyleRug.length / 2 + i] = dolphinemoji;
-            argyleRug[argyleRug.length -1 - i][argyleRug.length / 2 - 1] = dolphinemoji;
+            argyleRug[argyleRug.length - 1 - i][argyleRug.length / 2 - i] = dolphinemoji;
         }
         return argyleRug;
     }
