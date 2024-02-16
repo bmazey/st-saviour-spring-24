@@ -121,8 +121,40 @@ public class TurkishRug {
     }
 
     // BONUS: Creates an argyle 2D String array.
+
     public static String[][] argyle() {
-        // TODO implement argyle()
-        return new String[0][0];
-    }
+        //creates a variable that stores the sun emoji
+        String sunemoji = new String(Character.toChars(0x1F506));
+        //creates a variable that stores the moon emoji
+        String moonemoji = new String(Character.toChars(0x1F31C));
+        //creates a multidimensional array called plaidRug that is 11x11
+        String[][] argyleRug = new String[11][11];
+        //iterates through the i values, which are down
+        for (int i = 0; i < argyleRug.length; i++){
+            //iterates through the j values, which are to the right
+            for (int j = 0; j < argyleRug[i].length; j++){
+                // if the value of position i and the value of position j add to 
+                //10 a sun emoji is placed
+                if (i + j == 10){
+                    argyleRug[i][j] = sunemoji;
+                //if these i position equals the j position a sun emoji is placed
+                } else if (i == j){
+                    argyleRug[i][j] = sunemoji;
+                //otherwise a moon emoji is placed
+                } else {
+                    argyleRug[i][j] = moonemoji;
+                }
+             }
+          }
+          //this iterates through the i values for half the length plus one, so 5
+          for (int i = 0; i < argyleRug.length / 2 + 1; i++){
+            //creates the diamond
+            argyleRug[i][argyleRug.length / 2 - i] = sunemoji;
+            argyleRug[i][argyleRug.length / 2 + i] = sunemoji;
+            argyleRug[(argyleRug.length -1) - i][argyleRug.length / 2 - i] = sunemoji;
+            argyleRug[(argyleRug.length -1) - i][argyleRug.length / 2 + i] = sunemoji;
+          }
+          //returns the completed rug
+          return argyleRug;
+     }
 }
