@@ -6,6 +6,7 @@ public class Loom {
         weave(TurkishRug.vertical());
         weave(TurkishRug.diagonal());
         weave(TurkishRug.plaid());
+        weave(TurkishRug.argyle());
     }
         
 

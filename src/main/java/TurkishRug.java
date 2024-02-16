@@ -49,9 +49,8 @@ public class TurkishRug {
         String [][] vertical = new String [11][11];
         for ( int i = 0; i < vertical.length; i++) {
             for (int j = 0; j < vertical [i].length; j++) {
+                vertical [i][j] = emoji3;
                 if (j % 2 == 0) {
-                    vertical [i][j] = emoji3;
-                } else {
                     vertical [i][j] = emoji4;
                 }
             }
@@ -67,11 +66,12 @@ public class TurkishRug {
         String [][] diagonal = new String [11][11];
         for (int i = 0; i < diagonal.length; i++) {
             for (int j = 0; j < diagonal [i].length; j++) {
+                diagonal [i][j] = emoji5;
                 if (i % 2 == 0 && j % 2 == 0) { 
-                    diagonal [i][j] = emoji5;
+                    diagonal [i][j] = emoji6;
                 }
                 if ( i % 2 == 1 && j % 2 == 1) {
-                    diagonal [i][j] = emoji6;
+                  diagonal [i][j] = emoji6;
                 }
             }
         }
@@ -83,13 +83,14 @@ public class TurkishRug {
     public static String[][] plaid() {
         String emoji7 = new String(Character.toChars(0x1F353));
         String emoji8 = new String(Character.toChars(0x1F34A));
-        
         String [][] plaid = new String [11][11];
         for ( int i = 0; i < plaid.length; i++) {
             for (int j = 0; j < plaid [i].length; j++) {
-                if (j % 2 == 1 || i % 2 == 1) {
-                    plaid[i][j] = emoji7;
-                } else {
+                plaid[i][j] = emoji7;
+                if (j % 2 == 1) {
+                    plaid[i][j] = emoji8;
+                }
+                if (i % 2 == 1) {
                     plaid[i][j] = emoji8;
                 }
             } 
