@@ -2,12 +2,11 @@ public class Loom {
 
     public static void main(String[] args) {
         weave(TurkishRug.solid());
-
-    }
-
-    public static void main(String[] args) {
         weave(TurkishRug.horizontal());
-
+        weave(TurkishRug.diagonal());
+        weave(TurkishRug.vertical());
+        weave(TurkishRug.plaid());
+        weave(TurkishRug.argyle());
     }
 
     // Prints a 2D String array.
