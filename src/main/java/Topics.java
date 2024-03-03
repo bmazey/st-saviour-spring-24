@@ -7,9 +7,6 @@ import org.json.JSONObject;
 public class Topics {
     public static void main(String[] args) {
 
-        Detector detector = new Detector("test", 101);
-        System.out.println(detector.search("this is test"));
-
         // Create a regular expression.
         Pattern pattern = Pattern.compile("abc.");
 
