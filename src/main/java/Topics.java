@@ -1,4 +1,5 @@
 import java.util.regex.Pattern;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -6,40 +7,26 @@ import org.json.JSONObject;
 
 public class Topics {
     public static void main(String[] args) {
+        // a space for AP practice problems
+        ArrayList<Integer> numList = new ArrayList<Integer>();
 
-        // Create a regular expression.
-        Pattern pattern = Pattern.compile("abc.");
+        numList.add(3);
+        numList.add(2);
+        numList.add(1);
+        numList.add(1, 0);
+        numList.set(0, 2);
+        // System.out.print(numList);
 
-        // Check to see if given text is matched by the regex pattern.
-        // System.out.println(pattern.matcher("abcd").matches());
-
-        // Maps in Java.
-        Map<String, String> ID = new HashMap<>();
-
-        ID.put("Name", "Jane Doe");
-        ID.put("City", "Chicago");
-        ID.put("Age", "22");
-
-        // System.out.println(ID.get("Name"));
-
-        ID.put("Phone", "718-860-2842");
-        // System.out.println(ID.get("Phone"));
-        ID.put("City", "Detroit");
-        // System.out.println(ID.get("City"));
-
-        // No duplicate keys allowed!
-
-        // Meet my friend JSON (JavaScript Object Notation).
-        JSONObject ID2 = new JSONObject(
-            "{\"name\":\"john doe\",\"city\":\"chicago\",\"age\":\"22\"}"
-        );
-
-        // System.out.println(ID2.get("name"));
-
-        // Fibonacci examples.
-        // System.out.println(fibonacci(48));
-        System.out.println(dynamicFibonacci(48));
+        String apple = "apple";
+        String pear = apple.substring(0, 2);
+        System.out.println(pear);
     }
+
+
+
+
+
+
 
     // Recursive fibonacci.
     // Return the Nth number of the sequence.
