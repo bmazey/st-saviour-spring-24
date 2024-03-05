@@ -17,6 +17,9 @@ public class Detector {
 
     public Detector(String pattern, int q) {
         // TODO - implement constructor
+        this.q = q; 
+        this.pattern = pattern;
+        this.h = (q << 1);
         // 1. populate pattern and q
         // 2. compute h
         // 3. compute the pattern hash
