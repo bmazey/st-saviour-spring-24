@@ -69,7 +69,7 @@ public class TurkishRug {
                 if (i % 2 == 0 && j % 2 == 0) {
                     diagonalRug[i][j] = dangoEmoji;
                 }
-                // When both i and j are odd, the array has swirl emojis
+                // When both i and j are odd, the array has dango emojis
                 if (i % 2 != 0 && j % 2 != 0) {
                     diagonalRug[i][j] = dangoEmoji;
                 }
