@@ -24,6 +24,7 @@ public class TurkishRug {
         // TODO implement horizontal()
         String bowemoji = new String(Character.toChars(0x1F380));
         String diamondemoji = new String(Character.toChars(0x1F48E));
+        // Create emojis
         String [][] horizontalRug = new String [11][11];
         for (int i = 0; i < horizontalRug.length; i++) {
             for (int j = 0; j < horizontalRug[i].length; j++){
@@ -42,6 +43,7 @@ public class TurkishRug {
     public static String[][] vertical() {
         String bowemoji = new String(Character.toChars(0x1F380));
         String diamondemoji = new String(Character.toChars(0x1F48E));
+        // Create emojis
         String[][] verticalRug = new String[11][11];
         for (int i = 0; i < verticalRug.length; i++) {
             for (int j = 0; j < verticalRug[i].length; j++){
