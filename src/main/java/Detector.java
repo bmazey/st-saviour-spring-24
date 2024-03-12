@@ -17,12 +17,15 @@ public class Detector {
 
     public Detector(String pattern, int q) {
         // TODO - implement constructor
+        // 1. populate pattern and q
         this.q = q; 
         this.pattern = pattern;
-        this.h = (q << 1);
-        // 1. populate pattern and q
+
         // 2. compute h
+        this.computeH();
+
         // 3. compute the pattern hash
+        this.computePHash();
     }
 
     private void computeH() {
@@ -31,6 +34,10 @@ public class Detector {
         // 2. for each character in the pattern ...
         //    - multiply h by the size of character set 
         //    - hash the result set it equal to the current value of h 
+        // use length -1
+        for (int i = 0; i < pattern.length() -1; i++){
+            h = (h * d) % q;
+        }
     }
 
     private void computePHash() {
@@ -38,8 +45,12 @@ public class Detector {
         // 1. loop over the pattern
         // 2. for each character in the pattern ...
         //    - multiply the size of the character set by the current pattern hash
-        //    - add the character at the current position
+        //    - add the character at the current position (charAt)
         //    - hash the entire result and set it equal to the current value of pattern hash
+        for (int i = 0; i < pattern.length(); i++){
+            phash = ((phash * d) + pattern.charAt(i)) % q;
+        }
+
     }
 
     // search returns the position of the first occurence of plagiarism, or a -1 if none detected.
@@ -53,8 +64,11 @@ public class Detector {
         // 1. loop over the pattern
         // 2. for each character ...
         //    - multiply the text hash by the size of the character set
-        //    - add the value of the current *text hash* character (not pattern!)
+        //    - add the value of the current *text* character (not pattern!)
         //    - hash the result and update thash accordingly 
+        for (int i = 0; i < pattern.length(); i++){
+            thash = ((thash * d) + text.charAt(i)) % q;
+        }
 
         // slide the pattern over the text one by one
         // make sure to correctly calculate the terminating condition of the loop!
