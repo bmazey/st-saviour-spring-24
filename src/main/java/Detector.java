@@ -64,24 +64,34 @@ public class Detector {
         //    - multiply the text hash by the size of the character set
         //    - add the value of the current *text hash* character (not pattern!)
         //    - hash the result and update thash accordingly 
-        // slide the pattern over the text one by one
+        // 3. slide the pattern over the text one by one
         // make sure to correctly calculate the terminating condition of the loop!
         // (HINT: length of text - length of pattern)
         // for each position ...
-        for(int i = 0; i < text.length() - pattern.length(); i++) {
+        for(int i = 0; i < pattern.length(); i++) {
             thash = (thash * d + pattern.charAt(i)) % q;
         }
+
+        for(int i = 0; i <= text.length()-pattern.length(); i++) {
             if (phash == thash) {
-                pattern.charAt(thash);
-            }
-            else 
-                pattern
+                for(int j=0; j< pattern.length(); j++) {
+                if(text.charAt(i+j) != pattern.charAt(j)){
+                        break;
+                }
+                }
+                // pattern.charAt(thash);
+            
+            } 
+        }
+            thash = (d * (thash - text.charAt(i) * h) + text.charAt(i + pattern.length())) % q;
+              if (thash < 0) {
+                thash += q;
+              }
+               
+            else {
+                
 
-
-                thash = (d * (thash - text.charAt(i) * h) + text.charAt(i + pattern.length())) % q;
-    if (thash < 0)
-        thash += q;
-}
+        
         // 1. check if the pattern hash equals the text hash
         //    - if it does, we need to rule out a possible hash collision.
         //    - compare the text window string to the pattern string, return the position if equal (plagiarism match)
@@ -92,5 +102,6 @@ public class Detector {
         //    - if text hash is negative, flip to positive by adding the value of the prime to current text hash.
         // 3. if there are no matches, return -1
         return -1;
+        }
     }
 }
