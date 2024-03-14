@@ -83,6 +83,15 @@ public class Detector {
         //    - ex: thash = (d * (thash - text.charAt(i) * h) + text.charAt(i + pattern.length())) % q;
         //    - if text hash is negative, flip to positive by adding the value of the prime to current text hash.
         // 3. if there are no matches, return -1
+        for (int i = 0; i < pattern.length(); i++){
+            if (phash == thash){
+                return text.charAt(i);
+            } 
+            if (text.length() - pattern.length() <= text.charAt(i)){
+                thash = (d * (thash - text.charAt(i) * h) + text.charAt(i + pattern.length()) % q);
+            }
+            }
+        }
         return -1;
     }
 }
