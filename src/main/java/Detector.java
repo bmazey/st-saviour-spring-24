@@ -18,13 +18,20 @@ public class Detector {
     public Detector(String pattern, int q) {
         // TODO - implement constructor
         // 1. populate pattern and q
+        this.pattern = pattern;
+        this.q = q;
         // 2. compute h
+        this.computeH();
         // 3. compute the pattern hash
+        this.computePHash();
     }
 
     private void computeH() {
         // TODO - implement conputeH()
         // 1. loop over the pattern
+        for (int i = 0; i < pattern.length() - 1; i++){
+            h = (h * q) % q;
+        }
         // 2. for each character in the pattern ...
         //    - multiply h by the size of character set 
         //    - hash the result set it equal to the current value of h 
@@ -33,6 +40,9 @@ public class Detector {
     private void computePHash() {
         // TODO - implement computePHash()
         // 1. loop over the pattern
+        for (int i = 0; i < pattern.length() - 1; i++){
+            phash = d * phash + pattern.charAt(i);
+        }
         // 2. for each character in the pattern ...
         //    - multiply the size of the character set by the current pattern hash
         //    - add the character at the current position
@@ -48,6 +58,20 @@ public class Detector {
 
         // start by computing the hash value of the first window of text
         // 1. loop over the pattern
+        for (int i = 0; i < pattern.length() - 1; i++) {
+            thash = thash * d + pattern.charAt(i) % q;
+            if (phash == thash) {
+                return pattern.length();
+            }
+            if (pattern.indexOf(text) < d - pattern.length()) {
+                thash = (d * (thash - text.charAt(i) * h) + text.charAt(i + pattern.length())) % q;
+            }  
+            if (thash < 0) {
+                thash += q;
+            } if (thash != phash) {
+                return -1;
+            }
+        }
         // 2. for each character ...
         //    - multiply the text hash by the size of the character set
         //    - add the value of the current *text hash* character (not pattern!)
@@ -66,6 +90,6 @@ public class Detector {
         //    - ex: thash = (d * (thash - text.charAt(i) * h) + text.charAt(i + pattern.length())) % q;
         //    - if text hash is negative, flip to positive by adding the value of the prime to current text hash.
         // 3. if there are no matches, return -1
-        return -1;
+        return pattern.indexOf(text);
     }
-}
+} 
