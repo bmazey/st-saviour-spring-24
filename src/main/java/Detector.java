@@ -16,10 +16,13 @@ public class Detector {
     private int h = 1;
 
     public Detector(String pattern, int q) {
-        // TODO - implement constructor
         // 1. populate pattern and q
+        this.pattern = pattern;
+        this.q = q;
         // 2. compute h
+        this.computeH();
         // 3. compute the pattern hash
+        this.computePHash();
     }
 
     private void computeH() {
