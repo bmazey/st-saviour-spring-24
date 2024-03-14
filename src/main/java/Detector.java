@@ -74,34 +74,25 @@ public class Detector {
 
         for(int i = 0; i <= text.length()-pattern.length(); i++) {
             if (phash == thash) {
+                System.out.println("collision detected");
                 for(int j=0; j< pattern.length(); j++) {
-                if(text.charAt(i+j) != pattern.charAt(j)){
+                    if(text.charAt(i+j) != pattern.charAt(j)){
                         break;
+                    }
+                    if(j == pattern.length() - 1) {
+                        return i;
+                    }
                 }
-                }
-                // pattern.charAt(thash);
-            
             } 
-        }
-            thash = (d * (thash - text.charAt(i) * h) + text.charAt(i + pattern.length())) % q;
-              if (thash < 0) {
-                thash += q;
-              }
-               
-            else {
-                
-
+            if (i< text.length()- pattern.length()){
+                thash = (d * (thash - text.charAt(i) * h) + text.charAt(i + pattern.length())) % q;
+                if (thash < 0) {
+                    thash = thash + q;
+                }
+            }
+        }   
         
-        // 1. check if the pattern hash equals the text hash
-        //    - if it does, we need to rule out a possible hash collision.
-        //    - compare the text window string to the pattern string, return the position if equal (plagiarism match)
-        //    - if they are NOT equal, continue
-        // 2. check if the current position is is less than the text window length - pattern length.
-        //    - if so, compute the next value for text hash by removing the leading digit and adding the trailing digit.
-        //    - ex: thash = (d * (thash - text.charAt(i) * h) + text.charAt(i + pattern.length())) % q;
-        //    - if text hash is negative, flip to positive by adding the value of the prime to current text hash.
-        // 3. if there are no matches, return -1
         return -1;
+
         }
     }
-}
