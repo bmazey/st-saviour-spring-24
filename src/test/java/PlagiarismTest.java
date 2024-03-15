@@ -104,9 +104,9 @@ public class PlagiarismTest {
     }
     @Test
     public void Nobody() {
-        Detector detector = new Detector("Still nobody wants me", 101);
+        Detector detector = new Detector("My god I'm so lonely", 101);
 
-        assertEquals(714, detector.search("I just want to feel alright\r\n" + 
+        assertEquals(0, detector.search("My god I'm so lonely\r\n" + 
         "So I open the window\r\n" +
         "To hear sounds of people\r\n" +
         "To hear sounds of people\r\n" +
