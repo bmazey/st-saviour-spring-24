@@ -102,7 +102,30 @@ public class PlagiarismTest {
                         "O end or no end\r\n" ));
                         
     }
+    @Test
+    public void Nobody() {
+        Detector detector = new Detector("Still nobody wants me", 101);
 
+        assertEquals(714, detector.search("I just want to feel alright\r\n" + 
+        "So I open the window\r\n" +
+        "To hear sounds of people\r\n" +
+        "To hear sounds of people\r\n" +
+        "Venus, planet of love\r\n" +
+        "Was destroyed by global warming\r\n" +
+        "Did its people want too much, too?\r\n" +
+        "Did its people want too much?\r\n" + 
+        "And I don't want your pity\r\n" +
+        "I just want somebody near me\r\n" +
+        "Guess I'm a coward\r\n" +
+        "I just want to feel alright\r\n" +
+        "And I know no one will save me\r\n" +
+        "I just need someone to kiss\r\n" +
+        "Give me one good honest kiss\r\n" +
+        "And I'll be alright\r\n" +
+        "Nobody, nobody, nobody."));
+    }
+        
+    
     @Test
     public void TheRoadNotTaken() {
         Detector detector = new Detector("And that has made all the difference", 101);
