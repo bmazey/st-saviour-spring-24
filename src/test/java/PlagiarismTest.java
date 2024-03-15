@@ -83,7 +83,7 @@ public class PlagiarismTest {
     public void loveSosa() {
         Detector detector = new Detector("These bitches love Sosa", 101);
 
-        assertEquals(714, detector.search("These bitches love Sosa, oh\r\n" + 
+        assertEquals(0, detector.search("These bitches love Sosa, oh\r\n" + 
                         "And they love them Glo' Boys, oh\r\n" + 
                         "Know we from the 'Go boy, oh\r\n" + 
                         "No one can control us, oh\r\n" + 
