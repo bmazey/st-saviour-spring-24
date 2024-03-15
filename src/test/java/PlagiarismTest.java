@@ -80,6 +80,30 @@ public class PlagiarismTest {
     }
 
     @Test
+    public void loveSosa() {
+        Detector detector = new Detector("These bitches love Sosa", 101);
+
+        assertEquals(714, detector.search("These bitches love Sosa, oh\r\n" + 
+                        "And they love them Glo' Boys, oh\r\n" + 
+                        "Know we from the 'Go boy, oh\r\n" + 
+                        "No one can control us, oh\r\n" + 
+                        "\r\n" + 
+                        "These bitches love Sosa, oh\r\n" + 
+                        "And they love them Glo' Boys, oh\r\n" + 
+                        "Know we from the 'Go boy, oh\r\n" + 
+                        "No one can control us, oh\r\n" + 
+                        "\r\n" + 
+                        "Glo Gang, we a bunch of soldiers\r\n" + 
+                        "Glo Gang, we a bunch of soldiers\r\n" + 
+                        "Glo Gang, we a bunch of soldiers\r\n" + 
+                        "Glo Gang, we a bunch of soldiers\r\n" + 
+                        "\r\n" + 
+                        "These bitches love Sosa\r\n" + 
+                        "O end or no end\r\n" ));
+                        
+    }
+
+    @Test
     public void TheRoadNotTaken() {
         Detector detector = new Detector("And that has made all the difference", 101);
 

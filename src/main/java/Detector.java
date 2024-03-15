@@ -47,7 +47,7 @@ public class Detector {
         //    - add the character at the current position
         //    - hash the entire result and set it equal to the current value of pattern hash
         for(int i = 0; i < pattern.length(); i++) {
-            phash = (phash * d + pattern.charAt(i)) % q;
+            phash = (d * phash + pattern.charAt(i)) % q;
         }
     }
 
@@ -69,14 +69,14 @@ public class Detector {
         // (HINT: length of text - length of pattern)
         // for each position ...
         for(int i = 0; i < pattern.length(); i++) {
-            thash = (thash * d + pattern.charAt(i)) % q;
+            thash = (thash * d + text.charAt(i)) % q;
         }
 
         for(int i = 0; i <= text.length()-pattern.length(); i++) {
             if (phash == thash) {
                 System.out.println("collision detected");
                 for(int j=0; j< pattern.length(); j++) {
-                    if(text.charAt(i+j) != pattern.charAt(j)){
+                    if(text.charAt(i+j) != pattern.charAt(j)) {
                         break;
                     }
                     if(j == pattern.length() - 1) {
@@ -84,7 +84,7 @@ public class Detector {
                     }
                 }
             } 
-            if (i< text.length()- pattern.length()){
+            if (i < text.length()- pattern.length()){
                 thash = (d * (thash - text.charAt(i) * h) + text.charAt(i + pattern.length())) % q;
                 if (thash < 0) {
                     thash = thash + q;
