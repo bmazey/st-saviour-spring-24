@@ -86,7 +86,7 @@ public class Detector {
                     }
                 }
             }
-            if (phash < (text.length() - pattern.length())) {
+            if (i < (text.length() - pattern.length())) {
                 thash = (d * (thash - text.charAt(i) * h) + text.charAt(i - pattern.length())) % q;
                 if(thash < 0){
                     thash = thash + q;
