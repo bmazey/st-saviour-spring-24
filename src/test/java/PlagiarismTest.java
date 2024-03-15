@@ -108,4 +108,62 @@ public class PlagiarismTest {
                         "And that has made all the difference."));
     }
     
+    @Test
+    public void Hamlet(){
+        Detector detector = new Detector ("To be, or not to be, that is the question:", 101);
+
+        assertEquals(0, detector.search("To be, or not to be, that is the question:\r\n" +
+                    "Whether 'tis nobler in the mind to suffer \r\n" +
+                    "The slings and arrows of outrageous fortune, \r\n" +
+                    "Or to take arms against a sea of troubles \r\n" + 
+                    "And by opposing end them. To die—to sleep, \r\n" + 
+                    "No more; and by a sleep to say we end \r\n" +
+                    "The heart-ache and the thousand natural shocks \r\n" + 
+                    "That flesh is heir to: 'tis a consummation \r\n" +
+                    "Devoutly to be wish'd. To die, to sleep; \r\n" +
+                    "To sleep, perchance to dream—ay, there's the rub: \r\n" +
+                    "For in that sleep of death what dreams may come, \r\n" +
+                    "When we have shuffled off this mortal coil, \r\n" +
+                    "Must give us pause—there's the respect \r\n" +
+                    "That makes calamity of so long life. \r\n" +
+                    "For who would bear the whips and scorns of time, \r\n" +
+                    "Th'oppressor's wrong, the proud man's contumely, \r\n" +
+                    "The pangs of dispriz'd love, the law's delay, \r\n" +
+                    "The insolence of office, and the spurns \r\n" +
+                    "That patient merit of th'unworthy takes, \r\n" +
+                    "When he himself might his quietus make \r\n" +
+                    "With a bare bodkin? Who would fardels bear,\r\n" +
+                    "To grunt and sweat under a weary life, \r\n" +
+                    "But that the dread of something after death, \r\n" +
+                    "The undiscovere'd country, from whose bourn \r\n" +
+                    "No traveller returns, puzzles the will, \r\n" +
+                    "And makes us rather bear those ills we have \r\n" +
+                    "Than fly to others that we know not of? \r\n" +
+                    "Thus conscience doth make cowards of us all, \r\n" +
+                    "And thus the native hue of resolution \r\n" +
+                    "Is sicklied o'er with the pale cast of thought, \r\n" +
+                    "And enterprises of great pith and moment \r\n" +
+                    "With this regard their currents turn awry \r\n" +
+                    "And lose the name of action.\r\n"));
+    }
+
+    @Test
+    public void Ozymandias(){
+        Detector detector = new Detector("My name is Ozymandias, King of Kings;", 101);
+
+        assertEquals(442, detector.search("I met a traveller from an antique land, \r\n" +
+                    "Who said—“Two vast and trunkless legs of stone \r\n" +
+                    "Stand in the desert. . . . Near them, on the sand, \r\n" + 
+                    "Half sunk a shattered visage lies, whose frown, \r\n" +
+                    "And wrinkled lip, and sneer of cold command, \r\n" +
+                    "Tell that its sculptor well those passions read \r\n" +
+                    "Which yet survive, stamped on these lifeless things, \r\n" +
+                    "The hand that mocked them, and the heart that fed; \r\n" +
+                    "And on the pedestal, these words appear: \r\n" +
+                    "My name is Ozymandias, King of Kings; \r\n" +
+                    "Look on my Works, ye Mighty, and despair! \r\n" +
+                    "Nothing beside remains. Round the decay \r\n" +
+                    "Of that colossal Wreck, boundless and bare \r\n" +
+                    "The lone and level sands stretch far away. \r\n"));
+    }
 }
