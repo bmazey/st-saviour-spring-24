@@ -16,7 +16,6 @@ public class Detector {
     private int h = 1;
 
     public Detector(String pattern, int q) {
-        // TODO - implement constructor
         // 1. populate pattern and q
         this.pattern = pattern;
         this.q = q;
@@ -27,10 +26,9 @@ public class Detector {
     }
 
     private void computeH() {
-        // TODO - implement conputeH()
         // 1. loop over the pattern
         for (int i = 0; i < pattern.length() - 1; i++){
-            h = (h * q) % q;
+            h = (h * d) % q;
         }
         // 2. for each character in the pattern ...
         //    - multiply h by the size of character set 
@@ -38,10 +36,9 @@ public class Detector {
     }
 
     private void computePHash() {
-        // TODO - implement computePHash()
         // 1. loop over the pattern
-        for (int i = 0; i < pattern.length() - 1; i++){
-            phash = d * phash + pattern.charAt(i);
+        for (int i = 0; i < pattern.length(); i++){
+            phash = (d * phash + pattern.charAt(i)) % q;
         }
         // 2. for each character in the pattern ...
         //    - multiply the size of the character set by the current pattern hash
@@ -51,27 +48,35 @@ public class Detector {
 
     // search returns the position of the first occurence of plagiarism, or a -1 if none detected.
     public int search(String text) {
-        // TODO implement search()
         // tash represents the hash of the current text window
         // set thash to 0
         int thash = 0;
 
         // start by computing the hash value of the first window of text
         // 1. loop over the pattern
-        for (int i = 0; i < pattern.length() - 1; i++) {
-            thash = thash * d + pattern.charAt(i) % q;
-            if (phash == thash) {
-                return pattern.length();
-            }
-            if (pattern.indexOf(text) < d - pattern.length()) {
-                thash = (d * (thash - text.charAt(i) * h) + text.charAt(i + pattern.length())) % q;
-            }  
-            if (thash < 0) {
-                thash += q;
-            } if (thash != phash) {
-                return -1;
-            }
+        for (int i = 0; i < pattern.length(); i++) {
+            thash = (thash * d + text.charAt(i)) % q;
         }
+
+        for (int i = 0; i <= text.length() - pattern.length(); i++) {
+            if (phash == thash) {
+                for (int j = 0; j < pattern.length(); j++) {
+                    if (text.charAt(i + j) != pattern.charAt(j)) {
+                        break;
+                    }
+                    if (j == pattern.length() - 1) {
+                        return i;
+                    }
+                }
+            }
+
+            if (i < text.length() - pattern.length()) {
+                thash = (d * (thash - text.charAt(i) * h) + text.charAt(i + pattern.length())) % q;
+                if (thash < 0) {
+                    thash += q;
+                }
+            }
+        }                
         // 2. for each character ...
         //    - multiply the text hash by the size of the character set
         //    - add the value of the current *text hash* character (not pattern!)
@@ -90,6 +95,6 @@ public class Detector {
         //    - ex: thash = (d * (thash - text.charAt(i) * h) + text.charAt(i + pattern.length())) % q;
         //    - if text hash is negative, flip to positive by adding the value of the prime to current text hash.
         // 3. if there are no matches, return -1
-        return pattern.indexOf(text);
+        return -1;
     }
 } 
