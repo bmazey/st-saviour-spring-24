@@ -16,7 +16,6 @@ public class Detector {
     private int h = 1;
 
     public Detector(String pattern, int q) {
-        // TODO - implement constructor
         // 1. populate pattern and q
         this.pattern = pattern; 
         this.q = q;
@@ -29,7 +28,7 @@ public class Detector {
     }
 
     private void computeH() {
-        // TODO - implement conputeH()
+        // implement conputeH()
         // 1. loop over the pattern
         // 2. for each character in the pattern ...
         //    - multiply h by the size of character set 
@@ -40,7 +39,7 @@ public class Detector {
     }
 
     private void computePHash() {
-        // TODO - implement computePHash()
+        // implement computePHash()
         // 1. loop over the pattern
         // 2. for each character in the pattern ...
         //    - multiply the size of the character set by the current pattern hash
@@ -53,7 +52,7 @@ public class Detector {
 
     // search returns the position of the first occurence of plagiarism, or a -1 if none detected.
     public int search(String text) {
-        // TODO implement search()
+        // implement search()
         // tash represents the hash of the current text window
         // set thash to 0
         int thash = 0;

@@ -9,38 +9,38 @@ public class PlagiarismTest {
         Detector detector = new Detector("Once upon a midnight dreary, while I pondered, weak and weary", 101);
 
         assertEquals(0, detector.search("Once upon a midnight dreary, while I pondered, weak and weary,\r\n" +
-                        "Over many a quaint and curious volume of forgotten lore—\r\n" +
+                        "Over many a quaint and curious volume of forgotten loreâ€”\r\n" +
                         "    While I nodded, nearly napping, suddenly there came a tapping,\r\n" +
                         "As of some one gently rapping, rapping at my chamber door.\r\n" +
-                        "“'Tis some visitor,” I muttered, “tapping at my chamber door—\r\n" +
-                        "            Only this and nothing more.”\r\n" + //
+                        "â€œ'Tis some visitor,â€  I muttered, â€œtapping at my chamber doorâ€”\r\n" +
+                        "            Only this and nothing more.â€ \r\n" + //
                         "\r\n" +
                         "    Ah, distinctly I remember it was in the bleak December;\r\n" +
                         "And each separate dying ember wrought its ghost upon the floor.\r\n" +
-                        "    Eagerly I wished the morrow;—vainly I had sought to borrow\r\n" +
-                        "    From my books surcease of sorrow—sorrow for the lost Lenore—\r\n" +
-                        "For the rare and radiant maiden whom the angels name Lenore—\r\n" +
+                        "    Eagerly I wished the morrow;â€”vainly I had sought to borrow\r\n" +
+                        "    From my books surcease of sorrowâ€”sorrow for the lost Lenoreâ€”\r\n" +
+                        "For the rare and radiant maiden whom the angels name Lenoreâ€”\r\n" +
                         "            Nameless here for evermore.\r\n" + //
                         "\r\n" + 
                         "    And the silken, sad, uncertain rustling of each purple curtain\r\n" +
-                        "Thrilled me—filled me with fantastic terrors never felt before;\r\n" +
+                        "Thrilled meâ€”filled me with fantastic terrors never felt before;\r\n" +
                         "    So that now, to still the beating of my heart, I stood repeating\r\n" +
-                        "    “'Tis some visitor entreating entrance at my chamber door—\r\n" +
-                        "Some late visitor entreating entrance at my chamber door;—\r\n" +
-                        "            This it is and nothing more.”\r\n" +
+                        "    â€œ'Tis some visitor entreating entrance at my chamber doorâ€”\r\n" +
+                        "Some late visitor entreating entrance at my chamber door;â€”\r\n" +
+                        "            This it is and nothing more.â€ \r\n" +
                         "\r\n" +
                         "    Presently my soul grew stronger; hesitating then no longer,\r\n" +
-                        "“Sir,” said I, “or Madam, truly your forgiveness I implore;\r\n" +
+                        "â€œSir,â€  said I, â€œor Madam, truly your forgiveness I implore;\r\n" +
                         "    But the fact is I was napping, and so gently you came rapping,\r\n" +
                         "    And so faintly you came tapping, tapping at my chamber door,\r\n" +
-                        "That I scarce was sure I heard you”—here I opened wide the door;—\r\n" +
+                        "That I scarce was sure I heard youâ€ â€”here I opened wide the door;â€”\r\n" +
                         "            Darkness there and nothing more.\r\n" + //
                         "\r\n" +
                         "    Deep into that darkness peering, long I stood there wondering, fearing,\r\n" +
                         "Doubting, dreaming dreams no mortal ever dared to dream before;\r\n" +
                         "    But the silence was unbroken, and the stillness gave no token,\r\n" +
-                        "    And the only word there spoken was the whispered word, “Lenore?”\r\n" +
-                        "This I whispered, and an echo murmured back the word, “Lenore!”—\r\n" +
+                        "    And the only word there spoken was the whispered word, â€œLenore?â€ \r\n" +
+                        "This I whispered, and an echo murmured back the word, â€œLenore!â€ â€”\r\n" +
                         "            Merely this and nothing more."));
     }
 
@@ -48,7 +48,7 @@ public class PlagiarismTest {
     public void RichardII() {
         Detector detector = new Detector("Of watery Neptune, is now bound in with shame", 101);
 
-        assertEquals(1008, detector.search("“This royal throne of kings, this scepter'd isle,\r\n" +
+        assertEquals(1010, detector.search("â€œThis royal throne of kings, this scepter'd isle,\r\n" +
                         "This earth of majesty, this seat of Mars,\r\n" +
                         "This other Eden, demi-paradise,\r\n" +
                         "This fortress built by Nature for herself\r\n" +
@@ -76,14 +76,61 @@ public class PlagiarismTest {
                         "That England, that was wont to conquer others,\r\n" +
                         "Hath made a shameful conquest of itself.\r\n" +
                         "Ah, would the scandal vanish with my life,\r\n" +
-                        "How happy then were my ensuing death!”"));
+                        "How happy then were my ensuing death!â€ "));
     }
 
+    @Test
+    public void loveSosa() {
+        Detector detector = new Detector("These bitches love Sosa", 101);
+
+        assertEquals(0, detector.search("These bitches love Sosa, oh\r\n" + 
+                        "And they love them Glo' Boys, oh\r\n" + 
+                        "Know we from the 'Go boy, oh\r\n" + 
+                        "No one can control us, oh\r\n" + 
+                        "\r\n" + 
+                        "These bitches love Sosa, oh\r\n" + 
+                        "And they love them Glo' Boys, oh\r\n" + 
+                        "Know we from the 'Go boy, oh\r\n" + 
+                        "No one can control us, oh\r\n" + 
+                        "\r\n" + 
+                        "Glo Gang, we a bunch of soldiers\r\n" + 
+                        "Glo Gang, we a bunch of soldiers\r\n" + 
+                        "Glo Gang, we a bunch of soldiers\r\n" + 
+                        "Glo Gang, we a bunch of soldiers\r\n" + 
+                        "\r\n" + 
+                        "These bitches love Sosa\r\n" + 
+                        "O end or no end\r\n" ));
+                        
+    }
+    @Test
+    public void Nobody() {
+        Detector detector = new Detector("My god I'm so lonely", 101);
+
+        assertEquals(0, detector.search("My god I'm so lonely\r\n" + 
+        "So I open the window\r\n" +
+        "To hear sounds of people\r\n" +
+        "To hear sounds of people\r\n" +
+        "Venus, planet of love\r\n" +
+        "Was destroyed by global warming\r\n" +
+        "Did its people want too much, too?\r\n" +
+        "Did its people want too much?\r\n" + 
+        "And I don't want your pity\r\n" +
+        "I just want somebody near me\r\n" +
+        "Guess I'm a coward\r\n" +
+        "I just want to feel alright\r\n" +
+        "And I know no one will save me\r\n" +
+        "I just need someone to kiss\r\n" +
+        "Give me one good honest kiss\r\n" +
+        "And I'll be alright\r\n" +
+        "Nobody, nobody, nobody."));
+    }
+        
+    
     @Test
     public void TheRoadNotTaken() {
         Detector detector = new Detector("And that has made all the difference", 101);
 
-        assertEquals(714, detector.search("Two roads diverged in a yellow wood,\r\n" + 
+        assertEquals(716, detector.search("Two roads diverged in a yellow wood,\r\n" + 
                         "And sorry I could not travel both\r\n" + 
                         "And be one traveler, long I stood\r\n" + 
                         "And looked down one as far as I could\r\n" + 
@@ -103,7 +150,7 @@ public class PlagiarismTest {
                         "\r\n" + 
                         "I shall be telling this with a sigh\r\n" + 
                         "Somewhere ages and ages hence:\r\n" + 
-                        "Two roads diverged in a wood, and I—\r\n" + 
+                        "Two roads diverged in a wood, and Iâ€”\r\n" + 
                         "I took the one less traveled by,\r\n" + 
                         "And that has made all the difference."));
     }
