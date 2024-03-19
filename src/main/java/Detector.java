@@ -70,8 +70,8 @@ public class Detector {
                         break;
                     }
                     if(j == pattern.length() - 1) {
-                        // if equal return 1
-                        return 1;
+                        // if equal return i
+                        return i;
                     }
                 }
             }
