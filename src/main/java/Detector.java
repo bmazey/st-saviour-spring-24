@@ -30,7 +30,7 @@ public class Detector {
         // 2. for each character in the pattern ...
         //    - multiply h by the size of character set 
         //    - hash the result set it equal to the current value of h 
-        for (int i = 0; 1 < pattern.length() - 1; i++) {
+        for (int i = 0; i < pattern.length() - 1; i++) {
             h = (h * d) % q;
         }
     }
@@ -48,7 +48,7 @@ public class Detector {
 
     // search returns the position of the first occurence of plagiarism, or a -1 if none detected.
     public int search(String text) {
-        // tash represents the hash of the current text window
+        // thash represents the hash of the current text window
         // set thash to 0
         int thash = 0;
 
@@ -87,7 +87,7 @@ public class Detector {
                 }
             }
             if (i < (text.length() - pattern.length())) {
-                thash = (d * (thash - text.charAt(i) * h) + text.charAt(i - pattern.length())) % q;
+                thash = (d * (thash - text.charAt(i) * h) + text.charAt(i + pattern.length())) % q;
                 if(thash < 0){
                     thash = thash + q;
                 }
