@@ -1,5 +1,17 @@
 package frq;
 
-public class StudentAdvance {
-    
+public class StudentAdvance extends Advance {
+
+    public StudentAdvance(int days) {
+        super(days);
+    }
+
+    public double getPrice() {
+        return super.getPrice() / 2;
+    }
+
+    public String toString() {
+        return super.toString() + "\n(student id required)";
+    }
+
 }
