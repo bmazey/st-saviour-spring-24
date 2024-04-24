@@ -1,0 +1,4 @@
+interface Decorator {
+    String decorate();
+}
+
