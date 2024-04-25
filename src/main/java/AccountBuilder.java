@@ -1,5 +1,11 @@
 public class AccountBuilder {
 
+    public AccountBuilder(AccountBuilder.Builder builder) {
+        //TODO Auto-generated constructor stub
+    }
+
+
+
     private String email;
     private String password;
     private String username;
@@ -21,6 +27,13 @@ public class AccountBuilder {
             return this;
         }
 
-        public Builder newUser
+        public Builder newUser(String username) {
+            this.username = username;
+            return this;
+        }
+
+        public AccountBuilder build() {
+            return new AccountBuilder(this);
+        }
     }
 }
