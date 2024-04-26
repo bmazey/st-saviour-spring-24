@@ -31,5 +31,12 @@ public class JewleryBuilder {
     public static class JewleryBuilderBuild {
         private int Length;
         private String Material;
+        private boolean isNecklace;
+        private boolean isBracelet;
+        private boolean isRing;
+    }
+    public jewleryBuilderBuild(int Length, String Materia ) {
+        this.Length = Length;
+        this.Material = Material;
     }
 }
