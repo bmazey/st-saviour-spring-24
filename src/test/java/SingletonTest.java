@@ -14,6 +14,6 @@ public class SingletonTest {
         assert singleton1 == singleton2;
         singleton1.setInfo("New info just dropped!");
     
-        assert singleton2.getInfo ().equals ("New info just dropped!")
+        assert singleton2.getInfo ().equals ("New info just dropped!");
     }
-    }
+}
