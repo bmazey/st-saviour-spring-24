@@ -1,4 +1,5 @@
 public abstract class RoomDecorator implements Decorator {
+    
     private Decorator room;
 
     @Override
