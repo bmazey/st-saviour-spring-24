@@ -9,6 +9,7 @@ public class Outfit {
 
     //assert that builder is a part of the outfit method, and class
     Outfit(Builder builder) {
+        //the fields from the outfit class are carried over into this method
         this.shirt = builder.shirt;
         this.pants = builder.pants;
         this.shoes = builder.shoes;
@@ -29,6 +30,7 @@ public class Outfit {
         return shoes;
     }
 
+    //these getter methods assert that the shirt, pants, and shoes equal the same components from above
     public void setShirt(String shirt) {
         this.shirt = shirt;
     }
