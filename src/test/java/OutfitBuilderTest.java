@@ -20,7 +20,6 @@ public class OutfitBuilderTest {
         assertEquals("t-shirt", myOutfit.getShirt());
         assertEquals("blue jeans", myOutfit.getPants());
         assertEquals("Adidas", myOutfit.getShoes());
-        
     }
     
 }

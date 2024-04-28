@@ -6,9 +6,11 @@ public class PolygonFactoryTest {
     
     @Test
     public void TestPolygonFactory() {
+        // creates variable myfactory
         PolygonFactory myFactory = new PolygonFactory();
+        // enters specific numbers of sides
         Polygon myPolygon = myFactory.getPolygon(3);
-
+        // asserts that the returned polygon is what is expected
         assert myPolygon instanceof Triangle;
 
         Polygon mySecondPolygon = myFactory.getPolygon(4);

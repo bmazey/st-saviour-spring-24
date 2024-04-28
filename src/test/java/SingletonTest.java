@@ -18,7 +18,6 @@ public class SingletonTest {
         
         // gets the info of singleton2 and asserts that it is equual to singleton1
         assert singleton2.getInfo().equals("new info just dropped!");
-
     }
     
 }
