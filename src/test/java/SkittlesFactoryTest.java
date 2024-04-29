@@ -1,13 +1,13 @@
-import static org.junit.Jupiter.api.Assertions.assertEquals;
-import static org.junit.Jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
-import org.junit.Jupiter.api.Test;
+import org.junit.jupiter.api.Test;
 
 public class SkittlesFactoryTest {
     
     @Test
     public void SkittlesFactoryTest() {
-        // Create a new skittle
+        // Create a new skittle 
         Skittles.SkittlesFactory mySkittles = new Skittles.SkittlesFactory();
 
         // Make sure that the color red gives you the correct type which is strawberry
@@ -28,10 +28,10 @@ public class SkittlesFactoryTest {
         
          // Make sure that the color green gives you the correct type which is greenapple
         Skittles GreenApple = mySkittles.getSkittles("green");
-        assertEquals("GreenApple", greenApple.getType());
+        assertEquals("GreenApple", GreenApple.getType());
 
         // If color is blue make sure that no skittle is created because it does not match what is allowed
-        Skittles otherColr = mySkittles.getSkittles("blue");
+        Skittles otherColor = mySkittles.getSkittles("blue");
         assertNull(otherColor);
     }
 }
