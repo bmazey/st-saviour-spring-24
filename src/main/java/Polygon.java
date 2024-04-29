@@ -1,8 +1,6 @@
-public class Polygon {
-    
-    
+public class Polygon implements Shapes{
 
-    public Poly getPoly (int numofSides) {
+    public String getPoly (int numofSides) {
         if (numofSides == 3) {
             return new Triangle();
         }
