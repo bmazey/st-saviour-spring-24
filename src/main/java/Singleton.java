@@ -10,7 +10,7 @@ public class  Singleton {
         //Asking the system if there is no instance 
         if(INSTANCE == null) {
             //Since there is no instance of Singleton then you return the original Singleton
-            return new Singleton();
+            INSTANCE = new Singleton();
         }
         //otherwise you get the instance
         return INSTANCE;
