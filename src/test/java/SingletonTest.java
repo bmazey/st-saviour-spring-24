@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 public class SingletonTest {
 
     @Test
+    //attaching the instance to the varibale of singleton
     public static void TestSingleton() {
         Singleton singleton1 = Singleton.getInstance();
         Singleton singleton2 = Singleton.getInstance();

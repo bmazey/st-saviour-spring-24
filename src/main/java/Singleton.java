@@ -1,6 +1,7 @@
 public class  Singleton {
     private static Singleton INSTANCE;
 
+
     private String info = "original info";
 
     private Singleton() {}

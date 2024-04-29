@@ -1,10 +1,11 @@
 public class JewleryBuilder {
+    //establishing data members and types 
     private int Length;
     private String Material;
     private boolean isNecklace;
     private boolean isBracelet;
     private boolean isRing;
-
+//establishing getters for each member
     public int getLength() {
         return Length;
     }
@@ -35,10 +36,12 @@ public class JewleryBuilder {
         private boolean isBracelet;
         private boolean isRing;
     }
+    //connecting those types to that builder method 
     public void JewleryBuilderBuild(int Length, String Material) {
         this.Length = Length;
         this.Material = Material;
     }
+    //establishing the setters 
     public JewleryBuilder setBraclet(boolean isBracelet) {
         this.isBracelet = isBracelet;
         return this;

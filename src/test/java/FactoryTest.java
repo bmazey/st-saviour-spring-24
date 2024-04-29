@@ -6,7 +6,7 @@ public class FactoryTest {
 
    @Test
    public void testShapeFactory() {
-
+//establishing a factory class that there can be instances of 
       ShapeFactory myFactory = new ShapeFactory();
 
       Shape myShape = myFactory.getShape(3);
