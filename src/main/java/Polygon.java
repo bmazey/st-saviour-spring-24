@@ -1,7 +1,6 @@
 public class Polygon {
-    public interface Poly {
-        String getType();
-    }
+    
+    
 
     public Poly getPoly (int numofSides) {
         if (numofSides == 3) {
