@@ -21,12 +21,12 @@ public class JewleryBuilder {
         return isBracelet;
     }
 
-    private JewleryBuilder(JewleryBuilderBuild builder) {
-        this.Length = builder.Length;
-        this.Material = builder.Material;
-        this.isNecklace = builder.isNecklace;
-        this.isBracelet = builder.isBracelet;
-        this.isRing = builder.isRing;
+    private JewleryBuilder(JewleryBuilder jewleryBuilder) {
+        this.Length = jewleryBuilder.Length;
+        this.Material = jewleryBuilder.Material;
+        this.isNecklace = jewleryBuilder.isNecklace;
+        this.isBracelet = jewleryBuilder.isBracelet;
+        this.isRing = jewleryBuilder.isRing;
     }
     public static class JewleryBuilderBuild {
         private int Length;
@@ -35,8 +35,25 @@ public class JewleryBuilder {
         private boolean isBracelet;
         private boolean isRing;
     }
-    public jewleryBuilderBuild(int Length, String Materia ) {
+    public void JewleryBuilderBuild(int Length, String Material) {
         this.Length = Length;
         this.Material = Material;
     }
+    public JewleryBuilder setBraclet(boolean isBracelet) {
+        this.isBracelet = isBracelet;
+        return this;
+    }
+    public JewleryBuilder setNecklace(boolean isNecklace) {
+        this.isNecklace = isNecklace;
+        return this;
+    }
+    public JewleryBuilder setRing(boolean isRing) {
+            this.isRing = isRing;
+            return this;
+    }
+    public JewleryBuilder build() {
+        return new JewleryBuilder(this);
+    }
+    
+        
 }
